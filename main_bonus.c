@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 06:19:10 by ibertran          #+#    #+#             */
-/*   Updated: 2023/12/15 15:58:18 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2023/12/15 17:08:27 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(void)
 
 	int	random;
 	int	total = 0;
-	while (total < 35)
+	while (total < 64)
 	{
 		random = rand() % 3;
 		ptr = get_next_line(fd[random]);
@@ -60,6 +60,7 @@ int	main(void)
 		i[random]++;
 		total++;
 	}
+	//get_next_line(-1);
 	printf("\e[0m");
 	printf("\n----------------------\n");
 }

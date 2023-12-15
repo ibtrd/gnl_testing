@@ -6,7 +6,7 @@
 #    By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/18 06:14:49 by ibertran          #+#    #+#              #
-#    Updated: 2023/12/15 15:05:55 by ibertran         ###   ########lyon.fr    #
+#    Updated: 2023/12/15 16:38:42 by ibertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ LDLIBS		=	$(addprefix -l, $(LIBS))
 
 INCS		=	../
 
-VALGRIND	= 	valgrind --leak-check=full
+VALGRIND	= 	valgrind -q --leak-check=full --show-reachable=yes
 
 RM			=	rm -f
 
