@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 06:19:10 by ibertran          #+#    #+#             */
-/*   Updated: 2023/12/15 17:08:27 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2023/12/20 23:22:37 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 {
 	int		fd[3];
 	char	*f1 = "files/mariah.txt";
-	char	*f2 = "files/numbers.txt";
+	char	*f2 = "files/ascii_xmas_tree";
 	char	*f3 = "../get_next_line_bonus.h";
 	fd[0] = open(f1, O_RDONLY);
 	fd[1] = open(f2, O_RDONLY);
@@ -42,7 +42,7 @@ int	main(void)
 
 	int	random;
 	int	total = 0;
-	while (total < 64)
+	while (total < 150)
 	{
 		random = rand() % 3;
 		ptr = get_next_line(fd[random]);
