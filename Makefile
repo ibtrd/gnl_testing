@@ -6,12 +6,14 @@
 #    By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/18 06:14:49 by ibertran          #+#    #+#              #
-#    Updated: 2023/12/15 16:38:42 by ibertran         ###   ########lyon.fr    #
+#    Updated: 2023/12/21 13:36:06 by ibertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-BUFF = 545
-FILE = files/bible
+BUFF = 42					#Define BUFFER_SIZE
+FILE = files/bible.txt		#Filepath of mandatory part test
+
+BONUS_MAX_LINES = 50		#Set the max amout of gnl calls of bonus part test
 
 fsanitize	=	#-fsanitize=address
 
@@ -45,17 +47,14 @@ RM			=	rm -f
 
 all :
 	$(CC) $(CFLAGS) $(CPPFLAGS) $(SRCS) -o $(NAME) $(LDFLAGS) $(LDLIBS) 
-	@echo "$(BLUE) $(NAME) has been created! $(RESET)"
 	$(VALGRIND) ./$(NAME) $(FILE)
 
 bonus :
 	$(CC) $(CFLAGS) $(CPPFLAGS) $(SRCS_BONUS) -o $(NAME) $(LDFLAGS) $(LDLIBS) 
-	@echo "$(BLUE) $(NAME) has been created! $(RESET)"
-	$(VALGRIND) ./$(NAME)
+	$(VALGRIND) ./$(NAME) $(BONUS_MAX_LINES)
 
 novalgrind :
 	$(CC) $(CFLAGS) $(CPPFLAGS) $(SRCS) -o $(NAME) $(LDFLAGS) $(LDLIBS) 
-	@echo "$(BLUE) $(NAME) has been created! $(RESET)"
 	./$(NAME) $(FILE)
 
 clean :
@@ -70,8 +69,3 @@ rebonus : clean
 # *** SPECIAL TARGETS ******************************************************** #
 
 .PHONY : all bonus novalgrind clean re rebonus
-
-# *** FANCY STUFF ************************************************************ #
-
-RESET	=	\e[0m
-BLUE	=	\e[34;49;1m ¯\_(ツ)_/¯ \e[39;44;1m

@@ -6,20 +6,27 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 06:19:10 by ibertran          #+#    #+#             */
-/*   Updated: 2023/12/20 23:22:37 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2023/12/21 13:33:26 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 #include <fcntl.h>
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
-int	main(void)
+int	main(int ac, char **av)
 {
+	if (ac != 2)
+		return (1);
+		
+	srand(time(NULL));
+
 	int		fd[3];
 	char	*f1 = "files/mariah.txt";
-	char	*f2 = "files/ascii_xmas_tree";
-	char	*f3 = "../get_next_line_bonus.h";
+	char	*f2 = "files/ascii_xmas_tree.txt";
+	char	*f3 = "../get_next_line_bonus.c";
 	fd[0] = open(f1, O_RDONLY);
 	fd[1] = open(f2, O_RDONLY);
 	fd[2] = open(f3, O_RDONLY);
@@ -42,7 +49,7 @@ int	main(void)
 
 	int	random;
 	int	total = 0;
-	while (total < 150)
+	while (total < atoi(av[1]))
 	{
 		random = rand() % 3;
 		ptr = get_next_line(fd[random]);
@@ -52,13 +59,20 @@ int	main(void)
 			printf("\e[0;33m");
 		else
 			printf("\e[0;34m");
-		if (ptr)
+		if (ptr && i[random] != 0)
+		{
 			printf("get_next_line fd%d - %-7d|%s", random, i[random], ptr);
-		else
+			i[random]++;
+		}
+		else if (!ptr && i[random] != 0)
+		{
+			i[random] = 0;
 			printf("get_next_line fd%d - %-7d|%s\n", random, i[random], ptr);
+		}
 		free(ptr);
-		i[random]++;
 		total++;
+		if (i[0] == 0 && i[1] == 0 && i[2] == 0)
+			break;
 	}
 	//get_next_line(-1);
 	printf("\e[0m");
