@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 06:19:10 by ibertran          #+#    #+#             */
-/*   Updated: 2024/01/08 13:55:04 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/01/08 14:03:55 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,13 @@ int	main(int ac, char **av)
 	printf("\n\n");
 
 	char	*ptr;
+	printf("get_next_line invalid fd 1 |");
 	ptr = get_next_line(-8);
-	printf("get_next_line invalid fd 1 |%s\n", ptr);
+	printf("%s\n", ptr);
 	free(ptr);
+	printf("get_next_line invalid fd 2 |");
 	ptr = get_next_line(4242);
-	printf("get_next_line invalid fd 2 |%s\n", ptr);
+	printf("%s\n", ptr);
 	free(ptr);
 	
 	ptr = "A";
