@@ -6,14 +6,14 @@
 #    By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/18 06:14:49 by ibertran          #+#    #+#              #
-#    Updated: 2023/12/21 14:06:09 by ibertran         ###   ########lyon.fr    #
+#    Updated: 2024/01/08 13:54:44 by ibertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 BUFFER_SIZE 	= 42					#Define BUFFER_SIZE
 FILE 			= files/bible.txt		#Filepath of mandatory part test
 
-BONUS_MAX_LINES = 50	#Set the max amout of gnl calls of bonus part test
+BONUS_MAX_LINES = 500	#Set the max amout of gnl calls of bonus part test
 
 # **************************************************************************** #
 

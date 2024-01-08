@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 06:19:10 by ibertran          #+#    #+#             */
-/*   Updated: 2023/12/21 13:33:26 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/01/08 13:55:04 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,18 @@ int	main(int ac, char **av)
 	printf("    -----------");
 	printf("\n\n");
 
-	char	*ptr = "A";
-
-	int	random;
+	char	*ptr;
+	ptr = get_next_line(-8);
+	printf("get_next_line invalid fd 1 |%s\n", ptr);
+	free(ptr);
+	ptr = get_next_line(4242);
+	printf("get_next_line invalid fd 2 |%s\n", ptr);
+	free(ptr);
+	
+	ptr = "A";
+	int	random = 0;
 	int	total = 0;
+
 	while (total < atoi(av[1]))
 	{
 		random = rand() % 3;
