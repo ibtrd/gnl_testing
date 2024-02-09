@@ -6,13 +6,14 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 06:19:10 by ibertran          #+#    #+#             */
-/*   Updated: 2023/12/15 04:10:32 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/02/09 17:35:06 by ibertran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <fcntl.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int	main(int ac, char **av)
 {
